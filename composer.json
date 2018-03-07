@@ -42,8 +42,7 @@
   "scripts": {
     "test": "./vendor/bin/phpunit",
     "fixer": [
-      "./vendor/bin/php-cs-fixer --verbose --config-file=./.php_cs fix",
-      "./vendor/bin/phpcbf app/ --standard=PSR2"
+      "./vendor/bin/php-cs-fixer --verbose --config-file=./.php_cs fix"
     ]
   },
   "minimum-stability": "dev",
