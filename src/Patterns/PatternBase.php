@@ -105,9 +105,6 @@ abstract class PatternBase
     {
         $this->resultString = Stringy::create('');
 
-        /*
-         * @var Field
-         */
         foreach ($this->values as $valueClass) {
             $this->resultString = $this->resultString->append($valueClass->getValue());
         }
