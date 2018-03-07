@@ -3,7 +3,7 @@
 namespace Convenia\PayrollFileReader\Fields\Formats;
 
 
-class FieldS extends FieldBase
+class FieldC extends FieldBase
 {
     /**
      * Return the formatted field.
