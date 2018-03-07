@@ -90,7 +90,7 @@ abstract class PatternBase
                 $this->defaultFields[$field]['defaultValue'] :
                 null;
 
-            $this->values[$field] = (new ($this->defaultFields[$field]['format']($defaultValue)))
+            $this->values[$field] = (new $this->defaultFields[$field]['format']($defaultValue))
                 ->setPosition($this->defaultFields[$field]['position'])
                 ->setLength($this->defaultFields[$field]['length']);
         }, array_keys($this->defaultFields));
