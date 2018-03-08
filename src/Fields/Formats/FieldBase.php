@@ -106,4 +106,16 @@ abstract class FieldBase implements FieldInterface
     {
         return $this->getValue();
     }
+
+    public function getStringFormatedTitleCase()
+    {
+
+    }
+
+    public function getStringFormatedUpperCase()
+    {
+        if(! ($this instanceof FieldC)) {
+            return $this->getValue();
+        }
+    }
 }

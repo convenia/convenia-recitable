@@ -8,9 +8,10 @@ class FieldN extends FieldBase
     /**
      * Return the formatted field.
      *
+     * @param string $case
      * @return string
      */
-    public function format()
+    public function format($case = null)
     {
         $this->value = $this->value->trim();
         $actualLength = $this->value->length();

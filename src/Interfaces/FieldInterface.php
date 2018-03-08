@@ -12,7 +12,7 @@ interface FieldInterface
      *
      * @return string
      */
-    public function format();
+    public function format($caseToFormat);
 
     /**
      * Return the formatted value.

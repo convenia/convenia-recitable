@@ -8,11 +8,19 @@ class FieldC extends FieldBase
     /**
      * Return the formatted field.
      *
+     * @param string $case
      * @return string
      */
-    public function format()
+    public function format($case = 'title')
     {
-        $this->value = $this->value->slugify(' ')->toTitleCase();
+        $this->value = $this->value->slugify(' ');
+        if(strcmp($case, 'title')) {
+            $this->value = $this->value->toTitleCase();
+        }
+        if(strcmp($case, 'upper')) {
+            $this->value = $this->value->toUpperCase();
+        }
+
         $actualLength = $this->value->length();
         $this->value = $this->value->truncate($this->getLength());
 
