@@ -52,11 +52,12 @@ abstract class FieldBase implements FieldInterface
     /**
      * Return the formatted value.
      *
+     * @param string $case
      * @return string
      */
-    public function getValue()
+    public function getValue($case = 'title')
     {
-        return (string) $this->format();
+        return (string) $this->format($case);
     }
 
     /**
@@ -109,13 +110,12 @@ abstract class FieldBase implements FieldInterface
 
     public function getStringFormatedTitleCase()
     {
+        return $this->getValue('title');
 
     }
 
     public function getStringFormatedUpperCase()
     {
-        if(! ($this instanceof FieldC)) {
-            return $this->getValue();
-        }
+        return $this->getValue('upper');
     }
 }

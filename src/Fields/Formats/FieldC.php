@@ -14,12 +14,7 @@ class FieldC extends FieldBase
     public function format($case = 'title')
     {
         $this->value = $this->value->slugify(' ');
-        if(strcmp($case, 'title')) {
-            $this->value = $this->value->toTitleCase();
-        }
-        if(strcmp($case, 'upper')) {
-            $this->value = $this->value->toUpperCase();
-        }
+        $this->stringCase($case);
 
         $actualLength = $this->value->length();
         $this->value = $this->value->truncate($this->getLength());
@@ -29,5 +24,20 @@ class FieldC extends FieldBase
         }
 
         return $this->value;
+    }
+
+    /**
+     * @param $case
+     */
+    public function stringCase($case): void
+    {
+        if (strcmp($case, 'title')) {
+            $this->value = $this->value->toTitleCase();
+            return;
+        }
+        if (strcmp($case, 'upper')) {
+            $this->value = $this->value->toUpperCase();
+            return;
+        }
     }
 }
