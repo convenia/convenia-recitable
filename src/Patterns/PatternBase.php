@@ -80,6 +80,11 @@ abstract class PatternBase
         $this->validateLength();
     }
 
+    public function getDefautFields()
+    {
+        return $this->defaultFields;
+    }
+
     /**
      * Fill the $values array with default and required values.
      */
